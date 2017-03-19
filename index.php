@@ -1,9 +1,8 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Timur
- * Date: 3/18/2017
- * Time: 1:20 PM
+ * @author Timur Misharin
+ * index.php file
  */
-echo "Hello Team F";
-echo "This is php file";
+
+require_once "./core/init.php";
+

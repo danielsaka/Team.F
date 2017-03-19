@@ -1,11 +1,9 @@
 <?php
 
 /**
- * Created by PhpStorm.
- * User: Timur
- * Date: 3/18/2017
- * Time: 1:22 PM
- * data base connection class
+ * MySQL data base connection class
+ * @author: Timur Misharin
+ *
  */
 class db
 {
