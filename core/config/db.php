@@ -3,7 +3,7 @@
 /**
  * MySQL data base connection class
  * @author: Timur Misharin
- *
+ * @version: 0.1
  */
 class db
 {
@@ -17,7 +17,6 @@ class db
         if(!mysqli_select_db($db,$this->db)){
             exit("No table");
         }
-
         mysqli_query("SET NAMES cp-1251");
 
         return $this->db;
