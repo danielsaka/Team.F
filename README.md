@@ -11,7 +11,7 @@ Members:
 
   Dima Pindrik,
   Timur Misharin,
-  Maoz Ben Yehude,
+  Maoz Ben Yehuda,
   Benny Talpa,
   Daniel Saka
   
