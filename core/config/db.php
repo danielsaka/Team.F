@@ -3,7 +3,7 @@
 /**
  * MySQL data base connection class
  * @author: Timur Misharin
- *
+ * @version: 0.1
  */
 class db
 {
