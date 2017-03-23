@@ -25,7 +25,7 @@ class Bootstrap {
 		}
 		
 		$controller = new $url[0];
-		$controller->loadModel($url[0]);
+        $controller->loadModel($url[0]);
 
 		// calling methods
 		if (isset($url[2])) {
@@ -44,14 +44,12 @@ class Bootstrap {
 			} else {
 				$controller->index();
 			}
-		}
-		
-		
+		}	
 	}
 	
 	function error() {
 		require 'controllers/error.php';
-		$controller = new Error();
+		$controller = new cError();
 		$controller->index();
 		return false;
 	}

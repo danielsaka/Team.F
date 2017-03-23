@@ -1,8 +1,13 @@
-<h1>Login</h1>
+<html>
 
-<form action="login/run" method="post">
-	
-	<label>Login</label><input type="text" name="login" /><br />
-	<label>Password</label><input type="password" name="password" /><br />
-	<label></label><input type="submit" />
+<form action="login/run" method="POST">
+    <h1 align="center">Login form
+        <h1>
+            <table align="center"
+                <tr><td>Name</td><td><input type="text" name="login"></td></tr>
+                <tr><td>Password</td><td><input type="password" name="password"></td></tr>
+                <tr><td><input type="submit" value="LOGIN"></td></tr>
+            </table>
 </form>
+
+</html>

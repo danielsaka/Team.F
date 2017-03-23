@@ -23,4 +23,4 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `login`, `password`) VALUES
-(1, 'jesse', 'a1361cb85be840d6a2d762c68e4910e2');
+(1, 'Dima', '123');

@@ -1,9 +1,8 @@
 <?php
 
-class Model {
 
-	function __construct() {
-		$this->db = new Database();
-	}
-
+Class Model {
+    function __construct(){
+        $this->db = new Database();
+    }
 }

@@ -2,32 +2,30 @@
 
 class Login_Model extends Model
 {
-	public function __construct()
-	{
-		parent::__construct();
-	}
-
-	public function run()
-	{
-		$sth = $this->db->prepare("SELECT id FROM users WHERE 
-				login = :login AND password = MD5(:password)");
-		$sth->execute(array(
-			':login' => $_POST['login'],
-			':password' => $_POST['password']
-		));
-		
-		//$data = $sth->fetchAll();
-		
-		$count =  $sth->rowCount();
-		if ($count > 0) {
-			// login
-			Session::init();
-			Session::set('loggedIn', true);
-			header('location: ../dashboard');
-		} else {
-			header('location: ../login');
-		}
-		
-	}
-	
+    public function __construct(){
+        parent::__construct();
+    }
+    
+    public function run()
+    {   
+        
+        $sql = $this->db->prepare("SELECT id FROM users WHERE login = :login AND password = :password"); //PDO commands, cleans query
+        $sql->execute(array(
+            ':login' => $_POST['login'],
+            ':password' => $_POST['password']
+        ));
+        
+        //$data = $sql->fetchAll();
+        $count =  $sql->rowCount();
+        if ($count > 0){
+            //login
+            Session::init();
+            Session::set('loggedIn', true);
+            Session::set('username', $_POST['login']); // extra
+            header('Location: ../dashboard');
+        } else {
+            header('Location: ../login');
+        }
+        
+    }
 }

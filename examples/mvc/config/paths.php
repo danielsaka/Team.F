@@ -1,3 +1,3 @@
 <?php
-
-define('URL', 'http://workspace/mvc/');
+    
+define('URL','http://localhost:85/mvc/');
