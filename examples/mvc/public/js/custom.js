@@ -1,4 +1,5 @@
-//$(document).ready(function() {
-//    alert(1);
-    
-//});
+$(document).ready(function() {
+	
+
+	
+});

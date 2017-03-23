@@ -1,4 +1,8 @@
-<?php require 'views/header.php'; ?>
+<h1>Login</h1>
 
-login page...
-<?php require 'views/footer.php'; ?>
+<form action="login/run" method="post">
+	
+	<label>Login</label><input type="text" name="login" /><br />
+	<label>Password</label><input type="password" name="password" /><br />
+	<label></label><input type="submit" />
+</form>
