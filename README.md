@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/DimaPindrik/Team.F.png?label=ready&title=Ready)](https://waffle.io/DimaPindrik/Team.F)
 # Team.F
 Team F Project:
 
