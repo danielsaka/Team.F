@@ -3,7 +3,7 @@
 class View{
     
     function __construct(){
-        echo 'TEAM F PROJECT <br /><br />';
+        //echo 'TEAM F PROJECT <br /><br />';
     }
     
     public function render($name, $noInclude = false)

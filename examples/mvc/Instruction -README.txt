@@ -1,0 +1,7 @@
+if you're using XAMPP:
+1) Copy this folder (mvc) to your htdocs folder in your XAMPP directroy
+2) Run your localhost -> localhost:<port>/mvc/
+3)If you have any questions. ask.
+
+if you're using PHPSTORM:
+1)

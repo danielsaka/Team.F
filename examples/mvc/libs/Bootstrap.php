@@ -1,52 +1,68 @@
 <?php
 
 class Bootstrap {
-
+    
+    private $url;
+    private $controller;
+    
 	function __construct() {
-
-		$url = isset($_GET['url']) ? $_GET['url'] : null;
-		$url = rtrim($url, '/');
-		$url = explode('/', $url);
-
-		//print_r($url);
+        
+		$this->parseURL();
 		
-		if (empty($url[0])) {
-			require 'controllers/index.php';
-			$controller = new Index();
-			$controller->index();
-			return false;
-		}
+        $this->initController();
+        
+        $this->controller->loadModel($this->url[0]);
 
-		$file = 'controllers/' . $url[0] . '.php';
-		if (file_exists($file)) {
-			require $file;
-		} else {
-			$this->error();
-		}
+		$this->callMethod();
 		
-		$controller = new $url[0];
-        $controller->loadModel($url[0]);
-
-		// calling methods
-		if (isset($url[2])) {
-			if (method_exists($controller, $url[1])) {
-				$controller->{$url[1]}($url[2]);
+	}
+	
+    private function parseURL() {
+        $this->url = isset($_GET['url']) ? $_GET['url'] : null;
+		$this->url = rtrim($this->url, '/');
+		$this->url = explode('/', $this->url);
+    }
+    
+    private function callMethod()
+    {
+        if (isset($this->url[2])) {
+			if (method_exists($this->controller, $this->url[1])) {
+				$this->controller->{$this->url[1]}($this->url[2]);
 			} else {
 				$this->error();
 			}
 		} else {
-			if (isset($url[1])) {
-				if (method_exists($controller, $url[1])) {
-					$controller->{$url[1]}();
-				} else {
-					$this->error();
-				}
-			} else {
-				$controller->index();
-			}
+			if (isset($this->url[1])) 
+                {
+				    if (method_exists($this->controller, $this->url[1])) {
+                        $this->controller->{$this->url[1]}();
+				    } else {
+					   $this->error();
+				    }
+			     } else {
+				    $this->controller->index();
+                    }
 		}	
-	}
-	
+    }
+    
+    private function initController()
+    {   
+        if (empty($this->url[0])) {
+			require 'controllers/index.php';
+			$this->controller = new Index();
+			
+		}
+        $file = 'controllers/' . $this->url[0] . '.php';
+		if (file_exists($file)) {
+			require $file;
+            $this->controller = new $this->url[0];
+		} else {
+			require 'controllers/error.php';
+		    $this->controller = new cError();
+		  
+		}
+    }
+    
 	function error() {
 		require 'controllers/error.php';
 		$controller = new cError();

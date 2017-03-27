@@ -1,1 +1,1 @@
-This is the main page
+Welcome, This is the home page

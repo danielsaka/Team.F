@@ -2,14 +2,15 @@
 <html>
 <head>
     
-    <title>Test</title>
     <link rel="stylesheet" href="<?php echo URL; ?>public/css/deafult.css"/>
     <script type="text/javascript" src="<?php echo URL; ?>public/js/jquery.js"></script>
     <script type="text/javascript" src="<?php echo URL; ?>public/js/custom.js"></script>
         
 </head>
 <body>
-    
+    <div id="headline">
+        <h2>TEAM F PROJECT</h2>
+    </div>
 <?php Session::init(); ?>
     <div id="header">
        (H) header
@@ -24,5 +25,5 @@
     </div>
     
     <div id="content">
-       
+    
     

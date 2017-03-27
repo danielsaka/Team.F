@@ -6,16 +6,36 @@ body {
 }
 
 #header {
+    margin: 0 auto;
+    max-width: 1020px;
+    border: 1px solid #878E63;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 0px rgba(12,3,25,0.8);
     padding: 20px;
     background: coral;
 }
 
 #content {
+    margin: 0 auto;
+    max-width: 1020px;
+    border: 1px solid #878E63;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 0px rgba(12,3,25,0.8);
     background: #fff;
     padding: 20px;
 }
 
 #footer {
+    margin: 0 auto;
+    max-width: 1020px;
+    border: 1px solid #878E63;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 0px rgba(12,3,25,0.8);
     background: cornflowerblue;
     padding: 20px;
+}
+h2 {
+    color:crimson;
+    text-decoration: overline;
+    font-family:fantasy;
 }
