@@ -2,11 +2,12 @@
 
 class Controller{
     
-    function __construct(){
+    function __construct()
+    {    
         //echo 'This is the Controller<br />';
         $this->view = new view();
        
-        }
+    }
     
     public function loadModel($name){
         

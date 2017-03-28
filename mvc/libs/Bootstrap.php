@@ -7,13 +7,13 @@ class Bootstrap {
     
 	function __construct() {
         
-		$this->parseURL();
+            $this->parseURL();
 		
-        $this->initController();
+            $this->initController();
         
-        $this->controller->loadModel($this->url[0]);
+            $this->controller->loadModel($this->url[0]);
 
-		$this->callMethod();
+            $this->callMethod();
 		
 	}
 	
@@ -21,6 +21,23 @@ class Bootstrap {
         $this->url = isset($_GET['url']) ? $_GET['url'] : null;
 		$this->url = rtrim($this->url, '/');
 		$this->url = explode('/', $this->url);
+    }
+        
+    private function initController()
+    {   
+        if (empty($this->url[0])) {
+			require 'controllers/index.php';
+			$this->controller = new Index();
+                        return false;
+		}
+        $file = 'controllers/' . $this->url[0] . '.php';
+		if (file_exists($file)) {
+			require $file;
+                        $this->controller = new $this->url[0];
+		} else {
+			require 'controllers/error.php';
+                        $this->controller = new cError(); 
+		}
     }
     
     private function callMethod()
@@ -43,24 +60,6 @@ class Bootstrap {
 				    $this->controller->index();
                     }
 		}	
-    }
-    
-    private function initController()
-    {   
-        if (empty($this->url[0])) {
-			require 'controllers/index.php';
-			$this->controller = new Index();
-			
-		}
-        $file = 'controllers/' . $this->url[0] . '.php';
-		if (file_exists($file)) {
-			require $file;
-            $this->controller = new $this->url[0];
-		} else {
-			require 'controllers/error.php';
-		    $this->controller = new cError();
-		  
-		}
     }
     
 	function error() {
